@@ -230,3 +230,36 @@ function renderHistory() {
 }
 
 window.updateUI();
+// Background event hook to trap Chrome's installation engine
+let deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent old mobile browsers from firing standard banner notifications automatically
+    e.preventDefault();
+    // Cache the event loop token so we can launch it via our custom button
+    deferredInstallPrompt = e;
+    
+    // Select the new action button layout element and make it visible
+    const installBtn = document.getElementById('pwa-install-btn');
+    if (installBtn) {
+        installBtn.style.display = 'block';
+    }
+});
+
+window.triggerNativeInstall = function() {
+    if (!deferredInstallPrompt) return;
+    
+    // Unroll the native Android installation card panel layout sheet
+    deferredInstallPrompt.prompt();
+    
+    // Evaluate what action the user commits to inside the dialog window
+    deferredInstallPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            // Hide our custom display element cleanly if installation completes
+            const installBtn = document.getElementById('pwa-install-btn');
+            if (installBtn) installBtn.style.display = 'none';
+        }
+        deferredInstallPrompt = null;
+    });
+};
+
