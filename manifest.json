@@ -1,9 +1,9 @@
-{
+{{
   "short_name": "WorkTimer",
   "name": "Premium Work Timer",
   "icons": [
     {
-      "src": "https://flaticon.com",
+      "src": "https://icons8.com",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
