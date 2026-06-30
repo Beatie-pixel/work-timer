@@ -208,9 +208,14 @@
   <div id="main-card" class="glass-card">
     <div id="status-badge" class="status-badge">Ready</div>
     <div id="display-time" class="current-time">0h 00m</div>
-    <div id="active-since" class="time-meta">Not clocked in</div>
-    <div class="break-notice">☕ Includes automatic 30m break deduction</div>
+     <!-- System Controls -->
+  <div class="controls">
+    <button id="clock-in-btn" class="btn-in" onclick="clockIn()">Clock In</button>
+    <button id="clock-out-btn" class="btn-out" onclick="clockOut()" disabled>Clock Out</button>
   </div>
+
+  <!-- New Floating Action Install Target Button -->
+  <button id="pwa-install-btn" style="display: none; width: 100%; background: var(--accent); color: #1f0b3d; margin-top: 10px;" onclick="triggerNativeInstall()">✨ Install to Phone Screen</button>
 
   <!-- Interactive Manual Break Box -->
   <div id="break-card" class="glass-card break-card-hidden">
