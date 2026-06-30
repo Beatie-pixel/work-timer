@@ -240,7 +240,6 @@
 
 <script>
     let startTime = localStorage.getItem('startTime') ? parseInt(localStorage.getItem('startTime')) : null;
-    localStorage.clear(); sessionStorage.clear();
     let history = JSON.parse(localStorage.getItem('workHistory') || '[]');
     let timerInterval = null;
     let openMonths = JSON.parse(localStorage.getItem('openMonths') || '{}');
