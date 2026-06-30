@@ -5,6 +5,12 @@
     {
       "src": "https://icons8.com",
       "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://icons8.com",
+      "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
     }
