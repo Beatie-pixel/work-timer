@@ -1,0 +1,17 @@
+{
+  "short_name": "WorkTimer",
+  "name": "Premium Work Timer",
+  "icons": [
+    {
+      "src": "https://flaticon.com",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#1f0b3d",
+  "theme_color": "#1f0b3d",
+  "display": "standalone",
+  "orientation": "portrait"
+}
